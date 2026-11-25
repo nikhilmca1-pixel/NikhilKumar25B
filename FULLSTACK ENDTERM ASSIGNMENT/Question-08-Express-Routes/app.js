@@ -1,0 +1,10 @@
+const express=require('express');const path=require('path');const app=express();const PORT=3000;
+app.use(express.urlencoded({extended:true}));app.set('view engine','ejs');app.set('views',path.join(__dirname,'views'));
+app.get('/',(req,res)=>res.render('home',{title:'Express Route Demo',message:'Welcome to the home page'}));
+app.get('/about',(req,res)=>res.render('page',{title:'About',message:'This is the About page.'}));
+app.get('/contact',(req,res)=>res.render('page',{title:'Contact',message:'Contact us at hello@example.com'}));
+app.get('/services',(req,res)=>res.render('page',{title:'Services',message:'Web development, UI design and API development.'}));
+app.get('/users',(req,res)=>res.render('users',{users:['Aarav','Diya','Kabir']}));
+app.get('/feedback',(req,res)=>res.render('feedback',{sent:false}));
+app.post('/feedback',(req,res)=>res.render('feedback',{sent:true,name:req.body.name||'Guest'}));
+app.listen(PORT,()=>console.log(`Server running at http://localhost:${PORT}`));

@@ -1,0 +1,2 @@
+const board=document.getElementById('board');const pieces=[['♜','♞','♝','♛','♚','♝','♞','♜'],Array(8).fill('♟'),...Array.from({length:4},()=>Array(8).fill('')),Array(8).fill('♙'),['♖','♘','♗','♕','♔','♗','♘','♖']];
+for(let r=0;r<8;r++){for(let c=0;c<8;c++){const cell=document.createElement('div');cell.className='square '+((r+c)%2?'dark':'light');cell.textContent=pieces[r][c];cell.dataset.row=r+1;cell.dataset.column=c+1;board.appendChild(cell)}}

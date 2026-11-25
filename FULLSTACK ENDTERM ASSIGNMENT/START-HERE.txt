@@ -1,0 +1,7 @@
+FULLSTACK ENDTERM ASSIGNMENT — 13 QUESTIONS
+
+1. Q1-Q7 and Q13: open index.html (Q13 needs npm install and npm run dev).
+2. Q8-Q10 and Q12: open terminal in that question folder, run npm install, then npm start.
+3. Q11: copy .env.example to .env, set MONGODB_URI, run npm install, then npm start.
+
+All questions are kept separate. See README.md for details.
