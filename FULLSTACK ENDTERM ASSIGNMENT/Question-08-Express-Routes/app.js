@@ -1,3 +1,9 @@
+
+// ## Question 8
+
+// Establish an Express application that manages a minimum of five routes, 
+// incorporating both GET and POST requests, and integrate a template engine into the application.
+
 const express=require('express');const path=require('path');const app=express();const PORT=3000;
 app.use(express.urlencoded({extended:true}));app.set('view engine','ejs');app.set('views',path.join(__dirname,'views'));
 app.get('/',(req,res)=>res.render('home',{title:'Express Route Demo',message:'Welcome to the home page'}));

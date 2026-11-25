@@ -1,3 +1,8 @@
+// ## Question 9
+
+// Develop an Express application and execute CRUD operations 
+// using RESTful routing on product data, encompassing product name, price, and description.
+
 const express=require('express');const app=express();app.use(express.json());let products=[{id:1,name:'Keyboard',price:799,description:'Mechanical-style USB keyboard'},{id:2,name:'Mouse',price:399,description:'Wireless optical mouse'}];let nextId=3;
 app.get('/products',(req,res)=>res.json(products));app.get('/products/:id',(req,res)=>{const p=products.find(x=>x.id===+req.params.id);p?res.json(p):res.status(404).json({error:'Product not found'})});
 app.post('/products',(req,res)=>{const {name,price,description}=req.body;if(!name||price===undefined||!description)return res.status(400).json({error:'name, price and description are required'});const p={id:nextId++,name,price:Number(price),description};products.push(p);res.status(201).json(p)});

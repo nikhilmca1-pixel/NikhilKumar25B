@@ -1,3 +1,8 @@
+// ## Question 11
+
+// Develop an Express application to execute CRUD operations using RESTful routing on product data, 
+// and store the data in your MongoDB database.
+
 require('dotenv').config();const express=require('express'),mongoose=require('mongoose');const app=express();app.use(express.json());
 const Product=mongoose.model('Product',new mongoose.Schema({name:{type:String,required:true},price:{type:Number,required:true,min:0},description:{type:String,required:true}},{timestamps:true}));
 app.get('/products',async(req,res)=>res.json(await Product.find()));

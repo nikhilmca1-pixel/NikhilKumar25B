@@ -1,3 +1,10 @@
+// # Question 12
+
+// Establish an e-commerce application with the following features: displaying all products, 
+// allowing users to add items to their cart, facilitating purchases with a payment system, showcasing successful 
+// orders in a dedicated section, and creating a master panel for sellers to add and edit product details.
+
+
 const express=require('express'),path=require('path'),app=express();app.use(express.json());app.use(express.static(path.join(__dirname,'public')));
 let products=[{id:1,name:'Classic Sneakers',price:2499,description:'Comfortable everyday sneakers',stock:12},{id:2,name:'Smart Watch',price:3999,description:'Fitness and notification features',stock:8},{id:3,name:'Backpack',price:1299,description:'Daily-use water-resistant backpack',stock:15}];let orders=[],nextId=4;
 app.get('/api/products',(req,res)=>res.json(products));
